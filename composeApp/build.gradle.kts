@@ -1,3 +1,4 @@
+import org.gradle.kotlin.dsl.implementation
 import org.jetbrains.compose.desktop.application.dsl.TargetFormat
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
@@ -31,6 +32,7 @@ kotlin {
             implementation(libs.androidx.activity.compose)
             // Android Koin
             implementation(libs.koin.android)
+            implementation(libs.koin.androidx.compose)
             // Android Play Integrity
             implementation(libs.integrity)
         }
@@ -47,9 +49,17 @@ kotlin {
             implementation(libs.kotlinx.coroutines.core)
             // Koin
             implementation(libs.koin.core)
+            implementation(libs.koin.compose)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
+        }
+    }
+
+    // 👇 This block defines the exported iOS framework name
+    targets.withType<org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget> {
+        binaries.withType<org.jetbrains.kotlin.gradle.plugin.mpp.Framework> {
+            baseName = "ComposeApp" // <--- Important
         }
     }
 }
