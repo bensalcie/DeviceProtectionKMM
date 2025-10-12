@@ -8,6 +8,6 @@ import org.koin.dsl.module
 
 val androidPlatformModule = module {
     single<DeviceIntegrityChecker> {
-        AndroidDeviceChecker(androidContext(), 1234567890L)
+        AndroidDeviceChecker(androidContext(), 1073128764436)
     }
 }

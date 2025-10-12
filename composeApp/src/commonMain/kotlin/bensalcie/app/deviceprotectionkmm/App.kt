@@ -24,6 +24,7 @@ import deviceprotectionkmm.composeapp.generated.resources.Res
 import deviceprotectionkmm.composeapp.generated.resources.compose_multiplatform
 import kotlinx.coroutines.launch
 import org.koin.compose.koinInject
+import kotlin.math.log
 
 @Composable
 @Preview
@@ -63,6 +64,7 @@ fun App() {
                     try {
                         val (token, hash) = checker.attest("""{"uid":"demo"}""")
                         text = "Token: ${token?.take(12) ?: "null"}\nHash:$hash"
+                        println("Token: ===>  ${token}\nHash:$hash")
                     } catch (e: Exception) {
                         text = "Error: ${e.message}"
                     }
