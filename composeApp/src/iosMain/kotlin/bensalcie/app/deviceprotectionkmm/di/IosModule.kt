@@ -2,6 +2,7 @@ package bensalcie.app.deviceprotectionkmm.di
 
 import bensalcie.app.deviceprotectionkmm.devicechecker.DeviceIntegrityChecker
 import bensalcie.app.deviceprotectionkmm.devicechecker.IosDeviceIntegrityChecker
+import org.koin.core.context.startKoin
 import org.koin.dsl.module
 
 
