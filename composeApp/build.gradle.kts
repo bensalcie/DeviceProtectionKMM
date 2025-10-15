@@ -7,6 +7,8 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
+    alias(libs.plugins.kotlinSerialization)
+
 }
 
 kotlin {
@@ -35,6 +37,12 @@ kotlin {
             implementation(libs.koin.androidx.compose)
             // Android Play Integrity
             implementation(libs.integrity)
+            //Ktor
+            implementation(libs.ktor.client.android)
+
+        }
+        iosMain.dependencies {
+            implementation(libs.ktor.client.darwin)
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -50,6 +58,13 @@ kotlin {
             // Koin
             implementation(libs.koin.core)
             implementation(libs.koin.compose)
+            implementation(libs.koin.compose.viewmodel)
+
+            //Ktor
+            implementation(libs.ktor.client.core)
+            implementation(libs.ktor.client.content.negotiation)
+            implementation(libs.ktor.serialization.kotlinx.json)
+
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
@@ -59,7 +74,7 @@ kotlin {
     // 👇 This block defines the exported iOS framework name
     targets.withType<org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget> {
         binaries.withType<org.jetbrains.kotlin.gradle.plugin.mpp.Framework> {
-            baseName = "ComposeApp" // <--- Important
+            baseName = "ComposeApp"
         }
     }
 }
