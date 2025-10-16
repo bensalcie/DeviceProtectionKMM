@@ -2,8 +2,8 @@ package bensalcie.app.deviceprotectionkmm.presentation
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import bensalcie.app.deviceprotectionkmm.domain.model.DeviceVerificationState
-import bensalcie.app.deviceprotectionkmm.domain.model.VerifyDeviceUseCase
+import bensalcie.app.deviceprotectionkmm.domain.DeviceVerificationState
+import bensalcie.app.deviceprotectionkmm.domain.VerifyDeviceUseCase
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
