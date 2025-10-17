@@ -15,6 +15,7 @@ class DeviceIntegrityViewModel(
     val state: StateFlow<DeviceVerificationState?> = _state
 
     fun verify() {
+        _state.value = DeviceVerificationState.Loading
         viewModelScope.launch {
             _state.value = verifyDeviceUseCase("{\"action\":\"verify_device\"}")
         }

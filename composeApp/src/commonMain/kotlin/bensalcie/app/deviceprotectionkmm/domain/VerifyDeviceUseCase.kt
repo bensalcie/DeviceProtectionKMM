@@ -37,6 +37,7 @@ class VerifyDeviceUseCase(
 sealed class DeviceVerificationState {
     data class Valid(val response: VerdictResponse) : DeviceVerificationState()
     data class Invalid(val reason: String) : DeviceVerificationState()
+    object Loading : DeviceVerificationState()
 }
 
 
