@@ -50,6 +50,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import bensalcie.app.deviceprotectionkmm.domain.DeviceVerificationState
 import org.koin.compose.viewmodel.koinViewModel
 
@@ -60,7 +61,7 @@ val DarkBlue = Color(0xFF192A56) // Used for phone outline and primary text
 
 @Composable
 fun DeviceIntegrityScreen(viewModel: DeviceIntegrityViewModel = koinViewModel()) {
-    val state by viewModel.state.collectAsState()
+    val state by viewModel.state.collectAsStateWithLifecycle()
     var showDialog by remember { mutableStateOf(false) }
     var isSuccess by remember { mutableStateOf(false) }
 
