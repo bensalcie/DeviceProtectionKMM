@@ -1,8 +1,9 @@
 import SwiftUI
 import ComposeApp
+import ComposeApp
 
 func setupKoin() {
-    KoinInitializerKt.initKoin { _ in
+    KoinInitializerKt.doInitKoin { _ in
         // no extra context needed
     }
 }
