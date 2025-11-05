@@ -11,3 +11,5 @@ val androidPlatformModule = module {
         AndroidDeviceChecker(androidContext(), 1073128764436)
     }
 }
+
+actual fun platformModule() = androidPlatformModule
