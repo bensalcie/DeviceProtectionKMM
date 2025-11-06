@@ -8,7 +8,7 @@ import org.koin.dsl.module
 
 val androidPlatformModule = module {
     single<DeviceIntegrityChecker> {
-        AndroidDeviceChecker(androidContext(), 1073128764436)
+        AndroidDeviceChecker(androidContext(), 11111111111111)// Add your own Cloud Console Key
     }
 }
 
